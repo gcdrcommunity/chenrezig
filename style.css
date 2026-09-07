@@ -1,0 +1,86 @@
+/* 光明洲實修中心 — 千手千眼觀音八關齋戒
+   色與字沿用 Poster/設計規範/光明洲網宣設計規範_20260907.md */
+:root{
+  --navy:#22415A; --ink:#4D5961; --grey:#77828A;
+  --paper:#FAF9F6; --warm:#D6B480; --line:rgba(34,65,90,.16);
+  --serif:"Noto Serif TC","Songti TC","Source Han Serif TC",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--serif);
+  font-weight:300;line-height:1.9;letter-spacing:.03em;
+  -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--navy)}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+
+/* 頁首 */
+.hero{position:relative;overflow:hidden}
+.hero img{width:100%;height:min(56vh,420px);object-fit:cover;object-position:22% 42%}
+.hero::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to bottom,rgba(250,249,246,.18),rgba(250,249,246,.55) 62%,var(--paper))}
+.hero-txt{position:absolute;z-index:2;left:0;right:0;bottom:26px;text-align:center}
+.hero-txt .t{font-size:clamp(30px,7vw,46px);color:var(--navy);letter-spacing:.22em;font-weight:400}
+.hero-txt .s{font-size:clamp(12px,3vw,15px);color:var(--navy);letter-spacing:.42em;margin-top:12px;opacity:.85}
+
+/* 區塊 */
+section{padding:44px 0}
+h2{font-size:21px;font-weight:400;color:var(--navy);letter-spacing:.16em;
+  margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+h3{font-size:17px;font-weight:400;color:var(--navy);letter-spacing:.1em;margin:26px 0 10px}
+p{margin-bottom:16px}
+ul{margin:0 0 16px 1.1em}li{margin-bottom:7px}
+.lead{font-size:17px;color:var(--navy)}
+.quote{border-left:2px solid var(--warm);padding:4px 0 4px 18px;margin:20px 0;
+  color:var(--navy);font-size:16px}
+.note{background:rgba(214,180,128,.10);border:1px solid rgba(214,180,128,.34);
+  border-radius:4px;padding:16px 18px;margin:20px 0;font-size:15px}
+.note b{color:var(--navy);font-weight:400}
+.muted{color:var(--grey);font-size:14px}
+
+/* 場次卡 */
+.cards{display:grid;gap:22px}
+.card{border:1px solid var(--line);border-radius:5px;padding:26px 24px;background:#fff}
+.card .tag{font-size:12px;letter-spacing:.3em;color:var(--grey)}
+.card h3{margin:8px 0 14px;font-size:20px;letter-spacing:.08em}
+.card .when{font-size:clamp(24px,5.5vw,32px);color:var(--navy);letter-spacing:.02em;
+  font-weight:200;line-height:1.35;margin-bottom:6px}
+.card .where{font-size:16px;color:var(--navy);margin-bottom:4px}
+.card .cond{font-size:14px;color:var(--grey);margin-bottom:20px}
+.status{display:inline-block;font-size:12px;letter-spacing:.16em;padding:3px 11px;
+  border-radius:99px;border:1px solid currentColor}
+.status.open{color:#3E6B4F}.status.soon{color:#9A7B44}
+
+/* 按鈕 */
+.btn{display:block;text-align:center;text-decoration:none;background:var(--navy);color:#fff;
+  padding:15px 20px;border-radius:4px;font-size:17px;letter-spacing:.12em}
+.btn:hover{background:#1a3348}
+.btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--navy)}
+.btn.off{background:#E7E4DE;color:var(--grey);pointer-events:none;border:none}
+
+/* 表單嵌入 */
+.embed{margin-top:22px;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:#fff}
+.embed iframe{width:100%;height:1100px;border:0;display:block}
+
+/* 資訊表 */
+.kv{width:100%;border-collapse:collapse;font-size:15px;margin-bottom:16px}
+.kv th{text-align:left;font-weight:400;color:var(--grey);width:6.6em;
+  padding:9px 12px 9px 0;vertical-align:top;white-space:nowrap}
+.kv td{padding:9px 0;color:var(--navy);border-bottom:1px solid var(--line)}
+.kv tr:last-child td{border-bottom:0}
+
+/* 頁尾 */
+footer{border-top:1px solid var(--line);margin-top:20px;padding:30px 0 46px;
+  text-align:center;color:var(--grey);font-size:14px}
+footer a{color:var(--grey)}
+.back{display:inline-block;margin-bottom:26px;font-size:14px;color:var(--grey);text-decoration:none}
+@media(max-width:560px){.embed iframe{height:1400px}}
+
+/* 長字串（羅馬拼音、網址）在窄螢幕會撐破版面 */
+body{overflow-wrap:break-word}
+.wrap,section,.card,.kv,.kv td{max-width:100%}
+@media(max-width:560px){
+  .kv th{width:5em;font-size:14px}
+  .kv td{font-size:14px}
+  .hero-txt .t{letter-spacing:.16em}
+}
