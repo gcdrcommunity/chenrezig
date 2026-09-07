@@ -19,13 +19,16 @@ a{color:var(--navy)}
 /* 整張顯示，height:auto。用 cover＋固定高度會裁掉人的身體，不要那樣做 */
 .hero img{width:100%;height:auto}
 .hero.poster{max-width:780px;padding-top:22px}
-.hero::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(250,249,246,.18),rgba(250,249,246,.55) 62%,var(--paper))}
+/* 只在底部收，inset:0 會把整張直式照片洗白 */
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;
+  background:linear-gradient(to bottom,rgba(250,249,246,0) 0%,rgba(250,249,246,.55) 46%,
+    rgba(250,249,246,.88) 74%,var(--paper) 100%)}
 /* 覆寫要放在基底之後，靠權重贏是脆弱的 */
 .hero.poster::after{display:none}
-.hero-txt{position:absolute;z-index:2;left:0;right:0;bottom:26px;text-align:center}
-.hero-txt .t{font-size:clamp(30px,7vw,46px);color:var(--navy);letter-spacing:.22em;font-weight:400}
-.hero-txt .s{font-size:clamp(12px,3vw,15px);color:var(--navy);letter-spacing:.42em;margin-top:12px;opacity:.85}
+.hero-txt{position:absolute;z-index:2;left:0;right:0;bottom:22px;padding:0 26px;text-align:center}
+.hero-txt .ph{margin:0;font-size:clamp(19px,4.4vw,25px);line-height:1.6;letter-spacing:.05em}
+.hero-txt .eb{display:block;font-size:clamp(13px,3vw,15px);letter-spacing:.2em;
+  color:var(--grey);margin-bottom:8px;font-weight:400}
 
 /* 區塊 */
 section{padding:44px 0}
