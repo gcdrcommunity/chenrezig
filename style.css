@@ -15,8 +15,11 @@ a{color:var(--navy)}
 .wrap{max-width:760px;margin:0 auto;padding:0 24px}
 
 /* 頁首 */
-.hero{position:relative;overflow:hidden}
-.hero img{width:100%;height:min(56vh,420px);object-fit:cover;object-position:22% 42%}
+.hero{position:relative;overflow:hidden;max-width:680px;margin:0 auto}
+/* 整張顯示，height:auto。用 cover＋固定高度會裁掉人的身體，不要那樣做 */
+.hero img{width:100%;height:auto}
+.hero.poster{max-width:760px}
+.hero.poster::after{display:none}
 .hero::after{content:"";position:absolute;inset:0;
   background:linear-gradient(to bottom,rgba(250,249,246,.18),rgba(250,249,246,.55) 62%,var(--paper))}
 .hero-txt{position:absolute;z-index:2;left:0;right:0;bottom:26px;text-align:center}
