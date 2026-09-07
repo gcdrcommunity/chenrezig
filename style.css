@@ -98,7 +98,6 @@ body{overflow-wrap:break-word}
 /* Notion 頁名與狀態列 */
 .ph{font-size:clamp(21px,4.4vw,27px);font-weight:500;color:var(--navy);
   letter-spacing:.04em;line-height:1.55;margin:6px 0 12px}
-.phs{font-size:13.5px;color:var(--grey);line-height:1.8;margin-bottom:0}
 
 /* 視覺隱藏但螢幕閱讀器讀得到 */
 .vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
