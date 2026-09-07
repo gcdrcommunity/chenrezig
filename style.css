@@ -19,6 +19,9 @@ a{color:var(--navy)}
 /* 整張顯示，height:auto。用 cover＋固定高度會裁掉人的身體，不要那樣做 */
 .hero img{width:100%;height:auto}
 .hero.poster{max-width:780px;padding-top:22px}
+/* 首頁橫版主視覺：滿版，自身已含文字，不加漸層也不疊字 */
+.hero.web{max-width:1100px;padding-top:0}
+.hero.web::after{display:none}
 /* 只在底部收，inset:0 會把整張直式照片洗白 */
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;
   background:linear-gradient(to bottom,rgba(250,249,246,0) 0%,rgba(250,249,246,.55) 46%,
